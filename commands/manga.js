@@ -4,7 +4,7 @@ const malScraper = require('mal-scraper');
 
 exports.run = (client, message, args) => {
 	console.log(message.author.username, "used manga");
-	const malClient = popura(config.malUsername, config.malPassword);
+	const malClient = popura(process.env.MAL_USERNAME, process.env.MAL_PASSWORD);
     return new Promise(async(resolve, reject) => {
         try {
             if (!args.length) return resolve(await message.channel.createMessage("You did not enter an manga to search for"));

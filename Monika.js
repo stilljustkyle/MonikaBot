@@ -8,7 +8,7 @@ const getYouTubeID = require("get-youtube-id");
 const fetchVideoInfo = require("youtube-info");
 const config = require("./config.json", "utf-8");
 const music = new Music(client, {
-  youtubeKey: config.yt_api_key,
+  youtubeKey: process.env.YOUTUBE_KEY,
   prefix: config.prefix,
   anyoneCanSkip: true,
   anyoneCanLeave: true,
@@ -38,4 +38,4 @@ client.on("message", (message) => {
 	}
 });
 
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);
