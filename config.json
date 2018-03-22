@@ -1,0 +1,8 @@
+{
+"token":"process.env.BOT_TOKEN",
+"prefix":"/",
+"ownerID":"188451970309160960",
+"yt_api_key":"process.env.YOUTUBE_KEY",
+"malUsername":"process.env.MAL_USERNAME",
+"malPassword":"process.env.MAL_PASSWORD"
+}
