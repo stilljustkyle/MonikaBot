@@ -1,9 +1,8 @@
-const config = require("../config.json", "utf-8");
+const config = require("../../config.json", "utf-8");
 const popura = require('popura');
 const malScraper = require('mal-scraper');
 
 exports.run = (client, message, args) => {
-	console.log(message.author.username, "used anime");
 	 return new Promise(async(resolve, reject) => {
             const malClient = popura(process.env.MAL_USERNAME, process.env.MAL_PASSWORD);
             try {
@@ -88,7 +87,21 @@ exports.run = (client, message, args) => {
                     }
                 }));
             } catch (err) {
-                reject(err);
+                console.log(err);
             }
         });
     }
+
+		exports.conf = {
+		  enabled: true,
+		  guildOnly: false,
+		  aliases: [],
+		  permLevel: 0
+		};
+
+		exports.help = {
+		  name: 'anime',
+			category: 'fun',
+		  description: 'Display information about an anime',
+		  usage: 'anime <anime_name>'
+		};

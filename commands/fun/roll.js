@@ -1,7 +1,6 @@
 const request = require('request');
 
 exports.run = (client, message, args) => {
-    console.log(message.author.username, "used roll");
     let diceroll = args.join(" ");
     request.get({
         url: `https://rolz.org/api/?${diceroll}.json`,
@@ -26,3 +25,17 @@ exports.run = (client, message, args) => {
         });
     });
 }
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ['r'],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'roll',
+  category: 'fun',
+  description: 'roll the specified type of dice (default 1d6)',
+  usage: 'roll <amount>D<type>'
+};

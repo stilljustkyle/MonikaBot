@@ -1,9 +1,8 @@
-const config = require("../config.json", "utf-8");
+const config = require("../../config.json", "utf-8");
 const popura = require('popura');
 const malScraper = require('mal-scraper');
 
 exports.run = (client, message, args) => {
-	console.log(message.author.username, "used manga");
 	const malClient = popura(process.env.MAL_USERNAME, process.env.MAL_PASSWORD);
     return new Promise(async(resolve, reject) => {
         try {
@@ -94,3 +93,17 @@ exports.run = (client, message, args) => {
         }
     });
 }
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'manga',
+	category: 'fun',
+  description: 'Display information about a manga',
+  usage: 'manga <manga_name>'
+};
