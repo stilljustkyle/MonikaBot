@@ -1,37 +1,22 @@
 {
-  "name": "Monika",
+  "name": "monikabot",
   "version": "1.0.0",
-  "description": "",
+  "description": "DiscordBot",
   "main": "Monika.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stilljustkyle/MonikaBot.git"
+  },
+  "author": "AryCode",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stilljustkyle/MonikaBot/issues"
+  },
+  "homepage": "https://github.com/stilljustkyle/MonikaBot#readme",
   "dependencies": {
-    "better-sqlite3": "* ",
-    "cleverbot-node": "*",
-    "discord.js": "*",
-    "discord.js-musicbot-addon": "*",
-    "enmap": "*",
-    "enmap-level": "*",
-    "ffmpeg": "*",
-    "fs": "*",
-    "get-youtube-id": "*",
-    "klaw": "*",
-    "mal-scraper": "*",
-    "node-opus": "*",
-    "opusscript": "*",
-    "path": "*",
-    "popura": "*",
-    "quick.db": "*",
-    "request": "*",
-    "util": "*",
-    "youtube-audio-stream": "*",
-    "youtube-info": "*",
-    "youtube-playlist-info": "*",
-    "ytdl-core": "*",
-    "ytsearcher": "*"
+    "discord.js": "^14.4.0"
   }
 }
