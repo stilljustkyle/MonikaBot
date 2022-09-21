@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
   // Find the uptime
+  /*
   var uptime = client.uptime;
   var days = Math.floor(uptime / (24 * 60 * 60 * 1000));
   var hours = Math.floor( (uptime - days * (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
@@ -14,6 +15,15 @@ exports.run = (client, message, args) => {
     days++;
     hours = 0;
   }
+  */
+  var totalSeconds = (client.uptime / 1000);
+  var days = Math.floor(totalSeconds / 86400);
+  totalSeconds %= 86400;
+  var hours = Math.floor(totalSeconds / 3600);
+  totalSeconds %= 3600;
+  var mins = Math.floor(totalSeconds / 60);
+  var seconds = Math.floor(totalSeconds % 60);
+
 
   const embed = new Discord.RichEmbed();
   embed.setAuthor('Information', client.user.avatarURL);
@@ -22,7 +32,7 @@ exports.run = (client, message, args) => {
   embed.addField("<:desktop:432250994965872640> Servers",client.guilds.size, true); //Servers
   embed.addField("<:busts_in_silhouette:432251213065617427> Users", client.users.size, true); // Users
   embed.addField("<:battery:432252074416275461> RAM Usage",`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB`, true); // RAM usage
-  embed.addField("<:clock2:432251722078093327> Uptime",`${days}d ${hours}h ${mins}m`, true); // Uptime
+  embed.addField("<:clock2:432251722078093327> Uptime",`${days}d ${hours}h ${mins}m ${seconds}s', true); // Uptime
   embed.addField("<:incoming_envelope:432252757416869908> Invite Link", `[Invite Me!](https://discordapp.com/oauth2/authorize?client_id=397998270171054080&permissions=8&scope=bot)`, true);
   embed.addField("<:tools:432252397461700609> Support Server", `[Monika Support](https://discord.gg/uSJZTuG)`, true);
   embed.addField("<:card_box:432253023067176960> Source", `[GitHub Repo](https://github.com/stilljustkyle/MonikaBot)`, true);
